@@ -13,6 +13,7 @@ import { lazy, Suspense } from "react";
 import Spinner from "./components/Spinner";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import Education from "./pages/Education";
 import EmergencyAlert from "./components/EmergencyAlert";
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
@@ -66,6 +67,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/education" element={<Education />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />

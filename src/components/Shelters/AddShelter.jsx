@@ -105,7 +105,7 @@ const AddShelter = () => {
         body: JSON.stringify(formData),
       });
       if (res.ok) {
-        navigate("/dashboard?tab=shelters");
+        navigate("/dashboard?shelters");
       } else {
         console.error("Failed to create shelter:", res.statusText);
       }

@@ -4,6 +4,7 @@ import { TextInput, Card, Button } from "flowbite-react";
 import { useSelector } from "react-redux";
 import { BASE_URL } from "../api/apiservice";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const DashShelters = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -55,6 +56,15 @@ const DashShelters = () => {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>DashShelters - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex flex-col justify-center items-center">
       <h1 className="text-3xl font-extrabold text-gray-900 mt-8">Shelters</h1>
       <p className="italic text-lg text-gray-700 mb-8">
@@ -101,6 +111,7 @@ const DashShelters = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

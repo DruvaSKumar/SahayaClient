@@ -5,6 +5,7 @@ import { FaShare } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaArrowLeft } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const HomeShelter = () => {
   const { shelterId } = useParams();
@@ -20,7 +21,7 @@ const HomeShelter = () => {
           const data = await res.json();
           setShelterData(data);
         } else {
-          setError("Failed to fetch shelter data");
+          setError("");
         }
       } catch (error) {
         setError("Error fetching shelter data");
@@ -48,6 +49,15 @@ const HomeShelter = () => {
   }
 
   return (
+<>
+    <Helmet>
+        <title>HomeShelter - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="relative">
       <div className="absolute top-0 right-0 mt-4 mr-4 flex items-center space-x-2">
         <span className="text-sm text-gray-600">Share</span>
@@ -142,6 +152,7 @@ const HomeShelter = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

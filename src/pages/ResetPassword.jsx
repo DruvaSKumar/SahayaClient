@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Button, TextInput, Label, Spinner } from "flowbite-react";
 import { BASE_URL } from "../api/apiservice";
+import { Helmet } from "react-helmet";
 
 const ResetPassword = () => {
   const { token } = useParams();
@@ -42,6 +43,15 @@ const ResetPassword = () => {
   };
 
   return (
+<>
+    <Helmet>
+        <title>ResetPassword - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex justify-center items-center h-screen">
       <form
         onSubmit={handleSubmit}
@@ -78,6 +88,7 @@ const ResetPassword = () => {
         </Button>
       </form>
     </div>
+    </>
   );
 };
 

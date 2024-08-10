@@ -1,18 +1,33 @@
+import React from 'react';
 import { Link } from "react-router-dom";
-import {
-  RiArrowRightSLine,
-  RiMailLine,
-  RiPhoneLine,
-  RiMapPinLine,
-} from "react-icons/ri";
-import { FaReact } from "react-icons/fa";
-import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
+import { RiArrowRightSLine, RiMailLine, RiPhoneLine, RiMapPinLine } from "react-icons/ri";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const About = () => {
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const stagger = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const hoverScale = {
+    scale: 1.05,
+    transition: { duration: 0.3 }
+  };
+
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>About - Sahaya Disaster Management</title>
         <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
         <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
@@ -20,309 +35,266 @@ const About = () => {
         <meta property="og:title" content="Sahaya Disaster Management" />
         <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
       </Helmet>
-    <div className="mx-2">
-      {/* first section */}
-      <div className="flex flex-col sm:flex-row md:mt-10 h-full">
-        <div className="w-full sm:w-1/2 p-6 sm:p-8">
-          <div className="rounded-lg h-full">
-            <h2 className="text-3xl text-center md:text-wrap md:text-5xl font-bold my-4">
-              Sahaya: Comprehensive Disaster Management Solution
-            </h2>
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2 sm:p-8 flex flex-col justify-center items-center text-2xl">
-          <p className="text-center mb-5 mx-3">
-            Stay safe, informed, and supported during disaster with the power of
-            the Sahaya.
-          </p>
-          <div className="flex flex-wrap text-lg">
-            <button className="bg-black text-white py-2 px-4 rounded mb-2 sm:mb-0 sm:mr-2">
-              Learn More
-            </button>
-            <Link to="/signup">
-              <button className="bg-white text-black py-2 px-4 rounded flex items-center">
-                Sign Up <RiArrowRightSLine className="ml-2" />
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* second section */}
-      <div className="flex sm:flex-row flex-col mt-4">
-        <div className="w-full sm:w-1/2 p-6 sm:p-8 h-full lg:text-xl">
-          <div className="rounded-lg py-8 md:p-0 h-full mt-2">
-            <p className="mb-4 text-2xl font-extrabold">
-              Instant alert for real-time disaster notification
-            </p>
-            <p className="lg:text-xl mb-4">
-              Be the first to know when disaster strikes with our instant alert,
-              future, dot, stay informed and take action to keep yourself and
-              your community safe.
-            </p>
-            <div className="flex flex-col">
-              <div className="flex mb-4">
-                <div className="w-1/2 pr-2">
-                  <h3 className="text-lg font-bold">Stay Safe</h3>
-                  <p className="text-md mb-2">
-                    Receive real-time notifications about approaching disasters
-                    and take necessary precautions
-                  </p>
-                </div>
-                <div className="w-1/2 pl-2">
-                  <h3 className="text-lg font-bold">Work Together</h3>
-                  <p className="text-md mb-2">
-                    Connect with community members and emergency responders to
-                    coordinate efforts and support each other
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2 p-6 sm:p-8 h-full hidden md:block">
-          <div className="rounded-lg h-full">
-            <img
-              src="https://media.istockphoto.com/id/1393054902/photo/continuity-crisis-recovery-business-plan-crisis-disaster-response-words.jpg?s=612x612&w=0&k=20&c=rXzyDYmQDFa2nFYerBUyRwd7UB_UJMq5j82-Of3szBA="
-              alt="image"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* third section */}
-      <div className="flex flex-col sm:flex-row">
-        <div className="w-full sm:w-1/2 p-6 sm:p-8 h-full">
-          <div className="rounded-lg h-full">
-            <img
-              src="https://media.istockphoto.com/id/1367515302/photo/anonymous-people-avatars-in-virtual-space.jpg?s=612x612&w=0&k=20&c=GNg5sT3r1p6pq08tfzVan95FxAPgQWlff4KtFHAffcA="
-              alt="image"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2 p-6 sm:p-8 h-full">
-          <div className="rounded-lg py-8 h-full">
-            <h2 className="text-2xl font-bold mb-4">
-              Empowering Communities Through Collaboration: Uniting for
-              Effective Energy Response
-            </h2>
-            <p className="text-lg">
-              Sahaya provides a digital meeting place where community members
-              and emergency responders can easily share information, coordinate
-              efforts, and work together to ensure an effective emergency
-              response.
-            </p>
-          </div>
-          <div className="flex flex-col">
-            <div className="flex sm:flex-row">
-              <button className="bg-black text-white py-2 px-4 rounded mb-2 sm:mb-0 sm:mr-2">
-                Learn More
-              </button>
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="bg-gradient-to-b from-green-50 to-white min-h-screen"
+      >
+        <div className="container mx-auto px-4 py-12">
+          <motion.section {...fadeIn} className="mb-20">
+            <motion.h1 
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-5xl md:text-7xl font-bold text-green-800 mb-6 text-center leading-tight"
+            >
+              Sahaya: Your Guardian in Crisis
+            </motion.h1>
+            <motion.p 
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-xl md:text-2xl text-green-700 text-center mb-12 max-w-3xl mx-auto"
+            >
+              Empowering communities with cutting-edge disaster management solutions for a safer tomorrow.
+            </motion.p>
+            <motion.div 
+              className="flex justify-center space-x-6"
+              variants={stagger}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.button 
+                whileHover={{ scale: 1.05, backgroundColor: "#059669" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-green-600 text-white py-4 px-8 rounded-full shadow-lg text-lg font-semibold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl"
+              >
+                Explore Our Mission
+              </motion.button>
               <Link to="/signup">
-                <button className="bg-white text-black py-2 px-4 rounded flex items-center">
-                  Sign Up <RiArrowRightSLine className="ml-2" />
-                </button>
+                <motion.button 
+                  whileHover={{ scale: 1.05, backgroundColor: "#D1FAE5" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-green-700 py-4 px-8 rounded-full shadow-lg text-lg font-semibold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl flex items-center"
+                >
+                  Join Sahaya <RiArrowRightSLine className="ml-2 text-xl" />
+                </motion.button>
               </Link>
+            </motion.div>
+          </motion.section>
+
+          <motion.section {...fadeIn} className="mb-20">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-4xl font-bold text-green-800 mb-6">
+                  Real-Time Alerts: Your First Line of Defense
+                </h2>
+                <p className="text-xl text-green-700 mb-8">
+                  Stay ahead of disasters with our state-of-the-art notification system. Be informed, be prepared, be safe.
+                </p>
+                <motion.div variants={stagger} initial="initial" animate="animate" className="grid grid-cols-2 gap-8">
+                  {[
+                    { title: "Instant Notifications", desc: "Receive real-time alerts about approaching dangers." },
+                    { title: "Community Connection", desc: "Coordinate efforts with local responders and neighbors." },
+                    { title: "Custom Safety Plans", desc: "Access personalized evacuation routes and safety tips." },
+                    { title: "Resource Locator", desc: "Find nearby shelters, hospitals, and emergency services." }
+                  ].map((item, index) => (
+                    <motion.div 
+                      key={index} 
+                      variants={fadeIn} 
+                      whileHover={hoverScale}
+                      className="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                    >
+                      <h3 className="text-xl font-semibold text-green-700 mb-2">{item.title}</h3>
+                      <p className="text-green-600">{item.desc}</p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+                whileHover={{ scale: 1.02 }}
+              >
+                <img
+                  src="https://i.pinimg.com/474x/c9/b3/d8/c9b3d8c2faf4bb9198b3725ca53db0dd.jpg"
+                  alt="Disaster Response"
+                  className="rounded-lg shadow-2xl transition-all duration-300"
+                />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-tr from-green-600/30 to-transparent rounded-lg"
+                  whileHover={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
+              </motion.div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col sm:flex-row">
-        <div className="w-full sm:w-1/2 p-6 sm:p-8 h-full">
-          <div className="rounded-lg py-8 h-full">
-            <p className="mb-4 text-2xl font-extrabold">
-              Organizing Emergency Supplies and Shelters for Effective Disaster
-              Management
-            </p>
-            <p className="text-lg mb-4">
-              Sahaya provides a comprehensive resource management system that
-              ensures efficient organization of emergency supplies and shelters.
-              With our platform, you can easily and manage essential resources,
-              making disaster management more effective and streamlined.
-            </p>
-            <div className="flex flex-col">
-              <div className="flex sm:flex-row">
-                <button className="bg-black text-white py-2 px-4 rounded mb-2 sm:mb-0 sm:mr-2">
-                  Learn More
-                </button>
-                <Link to="/signup">
-                  <button className="bg-white text-black py-2 px-4 rounded flex items-center">
-                    Sign Up <RiArrowRightSLine className="ml-2" />
-                  </button>
-                </Link>
+          </motion.section>
+
+          <motion.section {...fadeIn} className="mb-20">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative order-2 md:order-1"
+                whileHover={{ scale: 1.02 }}
+              >
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/1912175041/display_1500/stock-vector-refugee-camp-for-refugees-victims-of-natural-disasters-many-people-doing-activities-in-the-camp-1912175041.jpg"
+                  alt="Community Collaboration"
+                  className="rounded-lg shadow-2xl transition-all duration-300"
+                />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-bl from-green-600/30 to-transparent rounded-lg"
+                  whileHover={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                ></motion.div>
+              </motion.div>
+              <div className="order-1 md:order-2">
+                <h2 className="text-4xl font-bold text-green-800 mb-6">
+                  United We Stand: Community-Driven Resilience
+                </h2>
+                <p className="text-xl text-green-700 mb-8">
+                  Sahaya creates a digital nexus where communities and first responders unite, sharing crucial information and resources to fortify our collective response to emergencies.
+                </p>
+                <div className="flex space-x-6">
+                  <motion.button 
+                    whileHover={{ scale: 1.05, backgroundColor: "#059669" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-green-600 text-white py-4 px-8 rounded-full shadow-lg text-lg font-semibold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl"
+                  >
+                    Join the Network
+                  </motion.button>
+                  <Link to="/signup">
+                    <motion.button 
+                      whileHover={{ scale: 1.05, backgroundColor: "#D1FAE5" }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-white text-green-700 py-4 px-8 rounded-full shadow-lg text-lg font-semibold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl flex items-center"
+                    >
+                      Get Started <RiArrowRightSLine className="ml-2 text-xl" />
+                    </motion.button>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2 p-6 sm:p-8 h-full">
-          <div className="rounded-lg h-full">
-            <img
-              src="https://media.istockphoto.com/id/1432208095/photo/army-doctor-playing-with-refugee-children-at-a-community-center.jpg?s=612x612&w=0&k=20&c=T9PU1CGNuf74yzyD3EJZK_5s7fvAo9tSJFTY-aAM04o="
-              alt="image"
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col items-center w-full max-w-7xl p-5">
-        <h2 className="text-3xl font-bold mb-6">FAQs</h2>
-        <p className="mb-8">
-          Find answers to common questions about disaster preparedness and
-          platform usage
-        </p>
-        <hr className="my-4 mx-auto w-1/2 border-1 border-gray-300" />
-        <div className="w-full">
-          <div className="mb-4 flex flex-col items-center">
-            <h3 className="text-xl font-bold mb-2">
-              What is disaster recovery?
-            </h3>
-            <p className="text-sm text-center">
-              Disaster recovery refers to the process of restoring systems,
-              data, and infrastructure after a disaster, ensuring continuity of
-              operations.
-            </p>
-          </div>
-          <hr className="my-4 mx-auto w-1/2 border-1 border-gray-300" />
+          </motion.section>
 
-          <div className="mb-4 flex flex-col items-center">
-            <h3 className="text-xl font-bold mb-2">
-              How to prepare for disasters?
-            </h3>
-            <p className="text-sm text-center">
-              Disaster preparedness involves creating an emergency plan,
-              assembling a disaster supply kit, and staying informed about
-              potential risks in your area.
-            </p>
-          </div>
-          <hr className="my-4 mx-auto w-1/2 border-1 border-gray-300" />
+          <motion.section {...fadeIn} className="mb-20">
+            <h2 className="text-4xl font-bold text-green-800 mb-12 text-center">Frequently Asked Questions</h2>
+            <motion.div variants={stagger} initial="initial" animate="animate" className="grid md:grid-cols-2 gap-8">
+              {[
+                { q: "What is disaster recovery?", a: "Disaster recovery is the strategic process of restoring systems, data, and infrastructure post-disaster, ensuring operational continuity and minimizing downtime." },
+                { q: "How to prepare for disasters?", a: "Effective disaster preparedness involves creating a comprehensive emergency plan, assembling a well-stocked disaster supply kit, and staying informed about potential risks in your area." },
+                { q: "How can I contribute to Sahaya?", a: "You can contribute by donating to disaster relief efforts, volunteering your time and skills, or helping spread awareness about our platform to enhance community safety during disasters." },
+                { q: "Is the Sahaya platform free?", a: "Yes, Sahaya is completely free for both community members and emergency responders. We're committed to providing accessible tools for effective disaster management." },
+                { q: "What makes Sahaya unique?", a: "Sahaya stands out with its real-time alert system, community-driven approach, and integration of advanced technologies to provide a comprehensive disaster management solution." },
+                { q: "How do I sign up for Sahaya?", a: "Signing up is simple! Visit our website and follow the quick registration process. It only takes a few minutes to join our community of prepared individuals." }
+              ].map((faq, index) => (
+                <motion.div 
+                  key={index}
+                  variants={fadeIn}
+                  whileHover={hoverScale}
+                  className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-green-500"
+                >
+                  <h3 className="text-2xl font-semibold text-green-700 mb-4">{faq.q}</h3>
+                  <p className="text-green-600 text-lg">{faq.a}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.section>
 
-          <div className="mb-4 flex flex-col items-center">
-            <h3 className="text-xl font-bold mb-2">How can I contribute?</h3>
-            <p className="text-sm text-center">
-              You can contribute by donating to disaster relief efforts,
-              volunteering your time and skills, and spreading awareness about
-              the platform to help more people stay safe during disasters.
-            </p>
-          </div>
-          <hr className="my-4 mx-auto w-1/2 border-1 border-gray-300" />
-
-          <div className="mb-4 flex flex-col items-center">
-            <h3 className="text-xl font-bold mb-2">Is the platform free?</h3>
-            <p className="text-sm text-center">
-              Yes, the platform is free to use for both community members and
-              emergency responders. We believe in providing accessible tools for
-              disaster management.
-            </p>
-          </div>
-          <hr className="my-4 mx-auto w-1/2 border-1 border-gray-300" />
-
-          <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold mb-2">How can I sign up?</h3>
-            <p className="text-sm text-center">
-              To sign up, simply visit our website and follow the registration
-              process. It only takes a few minutes.
-            </p>
-          </div>
-        </div>
-        <h2 className="text-3xl font-bold mb-6 mt-10">Still Have Questions?</h2>
-        <p className="mb-8">Contact us for further assistance</p>
-        <button
-          className="bg-white text-black py-2 px-4 rounded flex items-center border-2"
-          onClick={() => (window.location.href = "mailto:contact@example.com")}
-        >
-          Contact
-        </button>
-      </div>
-      <div className="flex flex-col sm:flex-row h-full">
-        <div className="w-full sm:w-1/2 p-6 sm:p-8">
-          <div className="rounded-lg py-8 h-full">
-            <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
-            <p>Have a question or want to get involved? Contact us today!</p>
-          </div>
-        </div>
-
-        <div className="w-full sm:w-1/2 p-4 sm:p-8 flex flex-col justify-center items-center">
-          <div className="text-lg text-center mb-4 flex items-center gap-2">
-            <RiPhoneLine className="text-1xl mb-2" />
-            <p className="mb-2">+1 123 456 7890</p>
-          </div>
-          <div className="text-lg text-center mb-4 flex items-center gap-2">
-            <RiMailLine className="text-1xl mb-2" />
-            <p className="mb-2">contact@example.com</p>
-          </div>
-          <div className="text-lg text-center mb-4 flex items-center gap-2">
-            <RiMapPinLine className="text-1xl mb-2" />
-            <p className="mb-2">123 Main Street, City, Country</p>
-          </div>
-        </div>
-      </div>
-
-      <footer className="mt-10 bg-gray-200 flex flex-col md:flex-row items-center md:justify-between">
-        <div className="p-6 sm:p-8 hidden sm:block">
-          <img src="/nexus3.png" alt="logo" className="h-16" />
-        </div>
-
-        <div className="p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center">
-          <div className="flex space-x-4">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600"
+          <motion.section {...fadeIn} className="mb-20">
+            <h2 className="text-4xl font-bold text-green-800 mb-12 text-center">Get in Touch</h2>
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-12 rounded-lg shadow-xl transition-all duration-300"
             >
-              <FaFacebook className="text-xl" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400"
-            >
-              <FaTwitter className="text-xl" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-600"
-            >
-              <FaInstagram className="text-xl" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700"
-            >
-              <FaLinkedin className="text-xl" />
-            </a>
-          </div>
-        </div>
+              <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                  <h3 className="text-3xl font-semibold text-green-700 mb-6">Contact Us</h3>
+                  <p className="text-xl text-green-600 mb-8">Have a question or want to get involved? We're here to help!</p>
+                  <motion.button 
+                    whileHover={{ scale: 1.05, backgroundColor: "#059669" }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-green-600 text-white py-4 px-8 rounded-full shadow-lg text-lg font-semibold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl"
+                    onClick={() => window.location.href = "mailto:contact@sahaya.com"}
+                  >
+                    Send us a Message
+                  </motion.button>
+                </div>
+                <div className="space-y-6">
+                  <motion.div whileHover={hoverScale} className="flex items-center">
+                    <RiPhoneLine className="text-3xl text-green-600 mr-6" />
+                    <p className="text-xl text-green-700">+1 (800) SAHAYA-HELP</p>
+                  </motion.div>
+                  <motion.div whileHover={hoverScale} className="flex items-center">
+                    <RiMailLine className="text-3xl text-green-600 mr-6" />
+                    <p className="text-xl text-green-700">contact@sahaya.com</p>
+                  </motion.div>
+                  <motion.div whileHover={hoverScale} className="flex items-center">
+                    <RiMapPinLine className="text-3xl text-green-600 mr-6" />
+                    <p className="text-xl text-green-700">123 Resilience Road, Safe City, SC 12345</p>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.section>
 
-        <div className="p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center">
-          <div className="text-center sm:text-left">
-            <p>Contact: (123) 456-7890</p>
-            <p>Email: contact@example.com</p>
-          </div>
+          <motion.footer 
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-green-800 text-white rounded-lg shadow-xl p-12"
+          >
+            <div className="grid md:grid-cols-4 gap-12">
+              <motion.div whileHover={hoverScale}>
+                <img src="/nexus3.png" alt="Sahaya logo" className="h-20 mb-6" />
+                <p className="text-lg">Empowering communities through innovative disaster management solutions.</p>
+              </motion.div>
+              <div>
+                <h4 className="text-2xl font-semibold mb-6">Quick Links</h4>
+                <ul className="space-y-4">
+                  <li><Link to="/" className="text-lg hover:text-green-300 transition duration-300">Home</Link></li>
+                  <li><Link to="/about" className="text-lg hover:text-green-300 transition duration-300">About</Link></li>
+                  <li><Link to="/services" className="text-lg hover:text-green-300 transition duration-300">Services</Link></li>
+                  <li><Link to="/contact" className="text-lg hover:text-green-300 transition duration-300">Contact</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-2xl font-semibold mb-6">Legal</h4>
+                <ul className="space-y-4">
+                  <li><Link to="/privacy" className="text-lg hover:text-green-300 transition duration-300">Privacy Policy</Link></li>
+                  <li><Link to="/terms" className="text-lg hover:text-green-300 transition duration-300">Terms of Service</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-2xl font-semibold mb-6">Connect With Us</h4>
+                <div className="flex space-x-6">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition duration-300">
+                    <FaFacebook className="text-3xl" />
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition duration-300">
+                    <FaTwitter className="text-3xl" />
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-green-300 transition duration-300">
+                    <FaLinkedin className="text-xl" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-green-700 text-center">
+              <p>&copy; 2024 Sahaya Disaster Management. All rights reserved.</p>
+            </div>
+          </motion.footer>
         </div>
-
-        <div className="p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center">
-          <div className="flex flex-col text-center sm:text-left">
-            <a
-              href="/privacy"
-              className="text-gray-600 hover:text-gray-900 mb-1"
-            >
-              Privacy Policy
-            </a>
-            <a href="/terms" className="text-gray-600 hover:text-gray-900">
-              Terms of Service
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+      </motion.div>
     </>
   );
 };

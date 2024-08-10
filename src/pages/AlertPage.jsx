@@ -3,6 +3,7 @@ import axios from "axios";
 import { BASE_URL } from "../api/apiservice";
 import { toast, ToastContainer } from "react-toastify";
 import { SocketContext } from "../context/SocketContext";
+import { Helmet } from "react-helmet";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -203,6 +204,16 @@ const AlertPage = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
+    <>
+    <Helmet>
+        <title>AlertPage - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
+    
     <div className="flex flex-col p-4 md:p-8 w-full md:w-3/4 mx-auto bg-gray-50 rounded-lg shadow-lg">
       <div className="relative mb-6">
         {currentUser.user.role === "admin" && (
@@ -347,6 +358,7 @@ const AlertPage = () => {
 
       <ToastContainer />
     </div>
+    </>
   );
 };
 

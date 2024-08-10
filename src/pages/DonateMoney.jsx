@@ -10,6 +10,7 @@ import axios from "axios";
 import { Button, Label, TextInput } from "flowbite-react";
 import { BASE_URL } from "../api/apiservice";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 export const useDebounce = (inputValue, delay = 1000) => {
   const [debouncedValue, setDebouncedValue] = useState(inputValue);
@@ -105,6 +106,15 @@ const DonateMoney = () => {
   }, [debouncedValue]);
 
   return (
+    <>
+    <Helmet>
+        <title>DonateMoney - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex flex-col md:flex-row justify-center md:justify-between">
       <div className="w-full md:w-1/2 p-4 md:pr-8">
         <img src="/svg.svg" alt="Your SVG" className="w-full" />
@@ -136,6 +146,7 @@ const DonateMoney = () => {
         </Elements>
       </div>
     </div>
+    </>
   );
 };
 

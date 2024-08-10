@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import {
   FiCheckCircle,
   FiList,
@@ -85,6 +86,15 @@ const VolunteerDashboard = () => {
   }, []);
 
   return (
+<>
+    <Helmet>
+        <title>VolunteerDashboard - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="container mx-auto px-4 py-8">
       <nav className="flex items-center justify-between p-4 bg-gray-200 text-gray-800 rounded-lg mb-6">
         <h1 className="text-2xl font-bold">Volunteer Dashboard</h1>
@@ -249,6 +259,7 @@ const VolunteerDashboard = () => {
         <ProgressBar now={(completedTasks / totalTasks) * 100} />
       </div>
     </div>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateFailure, updateStart, updateSuccess } from "../redux/userSlice";
 import { BASE_URL } from "../api/apiservice";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import DashSidebar from "../components/DashSidebar";
 import {
   getDownloadURL,
@@ -169,6 +170,15 @@ const UpdateProfile = () => {
     }));
   };
   return (
+    <>
+    <Helmet>
+        <title>UpdatePage - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex flex-col items-center">
       <h2 className="text-3xl font-extrabold text-gray-900 my-8">
         Update Profile
@@ -385,6 +395,7 @@ const UpdateProfile = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 

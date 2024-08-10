@@ -96,6 +96,7 @@ const EmergencyResponderDashboard = () => {
   }, []);
 
   return (
+    
     <div className="container mx-auto px-4 py-8">
       <div className="flex items-center mb-6">
         <FaUserCircle className="text-4xl mr-2 text-blue-500" />
@@ -197,7 +198,7 @@ const EmergencyResponderDashboard = () => {
         <Link to="/community">
           <div className="bg-white p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-2 text-gray-900">
-              Ask Your Questions
+              Ask Your Questiosns
             </h3>
             <div>
               <h4 className="text-lg font-semibold text-gray-800">

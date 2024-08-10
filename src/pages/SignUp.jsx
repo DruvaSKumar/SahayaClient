@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import VolunteerSignUp from "./VolunteerSignup";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -61,6 +62,15 @@ const SignUp = () => {
   };
 
   return (
+<>
+    <Helmet>
+        <title>Signup - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex flex-col lg:flex-row items-stretch mt-10">
       <div
         className="w-full h-screen lg:w-1/2 bg-center lg:block hidden"
@@ -176,6 +186,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

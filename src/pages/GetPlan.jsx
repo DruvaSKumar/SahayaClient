@@ -5,6 +5,7 @@ import { Button } from "flowbite-react";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaEdit, FaArrowLeft } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 import DashSidebar from "../components/DashSidebar";
 const GetPlan = () => {
   const [plans, setPlans] = useState([]);
@@ -40,6 +41,15 @@ const GetPlan = () => {
   }, [currentUser.user._id]);
 
   return (
+<>
+    <Helmet>
+        <title>GetPlan - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-semibold mb-8 text-center text-green-600">
         Emergency Plans
@@ -151,6 +161,7 @@ const GetPlan = () => {
         ))
       )}
     </div>
+    </>
   );
 };
 

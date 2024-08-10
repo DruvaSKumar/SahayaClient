@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaInfoCircle, FaYoutube } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const disasterTypes = [
   {
@@ -49,6 +50,15 @@ const Education = () => {
   const [selectedDisaster, setSelectedDisaster] = useState(null);
 
   return (
+<>
+    <Helmet>
+        <title>AdminDashboard - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Disaster Education Center</h1>
       
@@ -120,6 +130,7 @@ const Education = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

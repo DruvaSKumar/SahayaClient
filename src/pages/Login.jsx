@@ -6,6 +6,7 @@ import { BASE_URL } from "../api/apiservice";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -78,6 +79,15 @@ const Login = () => {
   };
 
   return (
+<>
+    <Helmet>
+        <title>Login - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex flex-col lg:flex-row items-stretch lg:h-screen mt-10">
       <div
         className="w-full lg:w-1/2 bg-center lg:block hidden"
@@ -157,6 +167,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

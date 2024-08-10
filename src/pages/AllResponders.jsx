@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import { Modal, Button, TextInput } from "flowbite-react";
+import { Helmet } from "react-helmet";
 
 import { BASE_URL } from "../api/apiservice";
 import {
@@ -233,6 +234,15 @@ const AllResponders = () => {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>AllResponders - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="container mx-auto p-4">
       <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
         All Responders
@@ -330,6 +340,7 @@ const AllResponders = () => {
         </Modal>
       )}
     </div>
+    </>
   );
 };
 

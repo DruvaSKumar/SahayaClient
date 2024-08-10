@@ -2,6 +2,7 @@ import React from "react";
 import { TextInput, Label, Button, Select } from "flowbite-react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { Helmet } from "react-helmet";
 
 const VolunteerSignUp = ({ initialValues, onBack, onSubmit }) => {
   const validationSchema = Yup.object({
@@ -18,6 +19,15 @@ const VolunteerSignUp = ({ initialValues, onBack, onSubmit }) => {
   };
 
   return (
+<>
+    <Helmet>
+        <title>VolunteerSignup - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex items-center justify-center">
       <div className="max-w-md w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden my-10">
         <Formik
@@ -136,6 +146,7 @@ const VolunteerSignUp = ({ initialValues, onBack, onSubmit }) => {
         </Formik>
       </div>
     </div>
+    </>
   );
 };
 

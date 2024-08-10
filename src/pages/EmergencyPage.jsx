@@ -214,14 +214,7 @@ const EmergencyPage = () => {
 
       <div className="mb-2" style={{ maxWidth: "300px" }}>
         <div className="relative">
-          <TextInput
-            id="small"
-            type="text"
-            sizing="sm"
-            placeholder="Search by location"
-            value={searchLocation}
-            onChange={handleSearchChange}
-          />
+          
           <HiOutlineSearch
             className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer"
             onClick={() => fetchIncidentsByLocation(searchLocation)}

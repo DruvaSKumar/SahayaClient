@@ -4,6 +4,7 @@ import { BASE_URL } from "../api/apiservice";
 import { FaShare, FaArrowLeft } from "react-icons/fa";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 const HomeHospital = () => {
   const { hospitalId } = useParams();
@@ -47,6 +48,15 @@ const HomeHospital = () => {
   }
 
   return (
+<>
+    <Helmet>
+        <title>HomeHospital - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-4">
         <button
@@ -113,6 +123,7 @@ const HomeHospital = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

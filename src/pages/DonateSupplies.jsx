@@ -3,6 +3,7 @@ import { BASE_URL } from "../api/apiservice";
 import { Button, Label, TextInput, Textarea } from "flowbite-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 const DonateSupplies = () => {
   const [formData, setFormData] = useState({
@@ -53,6 +54,15 @@ const DonateSupplies = () => {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>DonateSupplies - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
     <div className="flex flex-col md:flex-row h-screen">
       <div className="md:w-1/2 flex items-center justify-center">
         <img src="/donation.png" alt="Donate Supplies" class="w-40 h-40" />
@@ -117,6 +127,7 @@ const DonateSupplies = () => {
       </div>
       <ToastContainer />
     </div>
+    </>
   );
 };
 

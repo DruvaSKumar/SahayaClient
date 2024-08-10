@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { HiSearch } from "react-icons/hi";
-import { TextInput, Card, Radio } from "flowbite-react";
+import { Card, Radio } from "flowbite-react";
 import { useSelector } from "react-redux";
 import { BASE_URL } from "../api/apiservice";
-import { FaPhone, FaFire, FaMedal } from "react-icons/fa";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaPhone, FaFire, FaMedal, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-
-
+import { motion } from "framer-motion";
 import Carousel from "react-multi-carousel";
 import axios from "axios";
 import "react-multi-carousel/lib/styles.css";
@@ -24,31 +22,51 @@ const Home = () => {
   const [weather, setWeather] = useState(null);
   const [locationFetched, setLocationFetched] = useState(false);
   const [news, setNews] = useState([]);
+
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const stagger = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const hoverScale = {
+    scale: 1.05,
+    transition: { duration: 0.3 }
+  };
+
   const emergencyContacts = useMemo(
     () => [
       {
         name: "Local Police Department",
         phoneNumber: "100",
         icon: <FaPhone />,
-        color: "#3B82F6",
+        color: "#047857",
       },
       {
         name: "Fire Department",
         phoneNumber: "104",
         icon: <FaFire />,
-        color: "#EF4444",
+        color: "#065f46",
       },
       {
         name: "Ambulance Service",
         phoneNumber: "108",
         icon: <FaPhone />,
-        color: "#10B981",
+        color: "#059669",
       },
       {
         name: "Emergency Contact Name",
         phoneNumber: "911",
         icon: <FaPhone />,
-        color: "#6B7280",
+        color: "#047857",
       },
     ],
     []
@@ -58,62 +76,55 @@ const Home = () => {
     const heroes = [
       {
         name: "Community Volunteer Group",
-        description:
-          "Provided food and shelter to 100 families during the recent flood",
+        description: "Provided food and shelter to 100 families during the recent flood",
         icon: <FaMedal />,
-        color: "#F59E0B",
+        color: "#059669",
       },
       {
         name: "Local Fire Department",
         description: "Rescued 20 people trapped in a burning building",
         icon: <FaMedal />,
-        color: "#EF4444",
+        color: "#047857",
       },
       {
         name: "Medical Team",
-        description:
-          "Saved lives by providing emergency medical care to accident victims",
+        description: "Saved lives by providing emergency medical care to accident victims",
         icon: <FaMedal />,
-        color: "#10B981",
+        color: "#065f46",
       },
     ];
 
     return (
-
-      <>
-
-      <Helmet>
-        <title>Home - Sahaya Disaster Management</title>
-        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
-        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
-        <meta name="author" content="Sahaya Team" />
-        <meta property="og:title" content="Sahaya Disaster Management" />
-        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
-      </Helmet>
-
-      <div className="mt-12">
-        <h1 className="text-gray-700 font-bold text-2xl lg:text-4xl mb-2">
+      <motion.div 
+        variants={fadeIn}
+        initial="initial"
+        animate="animate"
+        className="mt-20"
+      >
+        <h2 className="text-green-800 font-bold text-3xl lg:text-5xl mb-8 text-center">
           Heroes of the Day
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 ml-4">
+        </h2>
+        <motion.div 
+          variants={stagger}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
           {heroes.map((hero, index) => (
-            <div className="max-w-xs" key={index}>
-              <Card className="h-full" style={{ backgroundColor: hero.color }}>
-                <div className="p-1">
-                  <div className="flex items-center mb-2">
-                    <div className="mr-2 text-white">{hero.icon}</div>
-                    <h5 className="text-xl font-bold tracking-tight text-white">
-                      {hero.name}
-                    </h5>
-                  </div>
-                  <p className="text-sm text-white">{hero.description}</p>
+            <motion.div 
+              key={index}
+              whileHover={hoverScale}
+              className="bg-white rounded-lg shadow-xl overflow-hidden transition-all duration-300"
+            >
+              <div className="p-6" style={{ backgroundColor: hero.color }}>
+                <div className="flex items-center mb-4">
+                  <div className="mr-3 text-white text-3xl">{hero.icon}</div>
+                  <h3 className="text-xl font-bold text-white">{hero.name}</h3>
                 </div>
-              </Card>
-            </div>
+                <p className="text-sm text-green-100">{hero.description}</p>
+              </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
-      </>
+        </motion.div>
+      </motion.div>
     );
   };
 
@@ -121,8 +132,7 @@ const Home = () => {
     const safetyTips = [
       {
         title: "Fire Safety",
-        description:
-          "Install smoke alarms in your home and test them regularly.",
+        description: "Install smoke alarms in your home and test them regularly.",
       },
       {
         title: "Flood Safety",
@@ -135,23 +145,33 @@ const Home = () => {
     ];
 
     return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-gray-700 font-bold text-2xl lg:text-4xl mb-2">
+      <motion.div 
+        variants={fadeIn}
+        initial="initial"
+        animate="animate"
+        className="mt-20"
+      >
+        <h2 className="text-green-800 font-bold text-3xl lg:text-5xl mb-8 text-center">
           Safety Tips
-        </h1>
-        <div className="bg-white shadow-lg rounded-lg p-2">
-          <div className="w-full">
-            <ul className="list-disc ml-6">
-              {safetyTips.map((tip, index) => (
-                <li key={index} className="mb-4">
-                  <h3 className="font-bold">{tip.title}</h3>
-                  <p>{tip.description}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+        </h2>
+        <motion.div 
+          variants={stagger}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        >
+          {safetyTips.map((tip, index) => (
+            <motion.div
+              key={index}
+              whileHover={hoverScale}
+              className="bg-white rounded-lg shadow-xl overflow-hidden transition-all duration-300"
+            >
+              <div className="p-6 bg-green-50">
+                <h3 className="text-xl font-bold text-green-700 mb-3">{tip.title}</h3>
+                <p className="text-green-600">{tip.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     );
   };
 
@@ -305,13 +325,13 @@ const Home = () => {
     <>
       <div className="flex flex-col gap-6 p-20 px-4 max-w-6xl mx-auto">
         <h1 className="text-green-700 font-bold text-3xl lg:text-6xl">
-          Discover Nexus for your next{" "}
+          Discover Sahaya for your next{" "}
           <span className="text-green-500">critical</span>
           <br />
           disaster management solution
         </h1>
         <div className="text-gray-600 text-xs sm:text-sm">
-          Nexus, your reliable partner in disaster management, where every
+          Sahaya, your reliable partner in disaster management, where every
           solution is tailored to protect and serve.
           <br />
           Explore tools that safeguard, strategies that empower, and the support

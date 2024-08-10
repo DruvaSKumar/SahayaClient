@@ -109,7 +109,7 @@ const About = () => {
               Effective Energy Response
             </h2>
             <p className="text-lg">
-              The Nexus provides a digital meeting place where community members
+              Sahaya provides a digital meeting place where community members
               and emergency responders can easily share information, coordinate
               efforts, and work together to ensure an effective emergency
               response.
@@ -137,7 +137,7 @@ const About = () => {
               Management
             </p>
             <p className="text-lg mb-4">
-              The Nexus provides a comprehensive resource management system that
+              Sahaya provides a comprehensive resource management system that
               ensures efficient organization of emergency supplies and shelters.
               With our platform, you can easily and manage essential resources,
               making disaster management more effective and streamlined.

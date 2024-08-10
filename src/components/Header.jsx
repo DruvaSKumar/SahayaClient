@@ -245,6 +245,18 @@ const Header = () => {
               Dashboard
             </Link>
           )}
+          <Link
+            to="/Education"
+            className="block lg:inline-block hover:text-gray-400 font-bold px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            Education
+          </Link>
+          <Link
+            to="/GeolocationPage"
+            className="block lg:inline-block hover:text-gray-400 font-bold px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            Geolocation
+          </Link>
         </div>
       )}
     </>

@@ -15,14 +15,14 @@ const About = () => {
         <div className="w-full sm:w-1/2 p-6 sm:p-8">
           <div className="rounded-lg h-full">
             <h2 className="text-3xl text-center md:text-wrap md:text-5xl font-bold my-4">
-              Nexus: Comprehensive Disaster Management Solution
+              Sahaya: Comprehensive Disaster Management Solution
             </h2>
           </div>
         </div>
         <div className="w-full sm:w-1/2 sm:p-8 flex flex-col justify-center items-center text-2xl">
           <p className="text-center mb-5 mx-3">
             Stay safe, informed, and supported during disaster with the power of
-            the Nexus.
+            the Sahaya.
           </p>
           <div className="flex flex-wrap text-lg">
             <button className="bg-black text-white py-2 px-4 rounded mb-2 sm:mb-0 sm:mr-2">

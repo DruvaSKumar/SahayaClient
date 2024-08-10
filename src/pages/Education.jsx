@@ -16,7 +16,7 @@ const disasterTypes = [
     icon: '🌊',
     color: '#4ECDC4',
     info: 'Floods occur when water overflows onto normally dry land. Move to higher ground and avoid walking or driving through floodwaters.',
-    image: 'https://source.unsplash.com/random/?flood',
+    image: 'https://plus.unsplash.com/premium_photo-1661962476059-13543ea45d4d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zmxvb2R8ZW58MHx8MHx8fDA%3D',
     youtubeLink: 'https://www.youtube.com/watch?v=43M5mZuzHF8'
   },
   {
@@ -50,13 +50,13 @@ const Education = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Disaster Education Center</h1>
+      <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">DISASTER EDUCATION CENTER</h1>
       
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {disasterTypes.map((disaster, index) => (
           <motion.div
             key={disaster.name}
-            className="w-48 h-48 rounded-lg shadow-lg flex flex-col items-center justify-center cursor-pointer"
+            className="w-48 h-40 rounded-lg shadow-lg flex flex-col items-center justify-center cursor-pointer"
             style={{ backgroundColor: disaster.color }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

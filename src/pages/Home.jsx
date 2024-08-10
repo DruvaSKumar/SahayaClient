@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import { BASE_URL } from "../api/apiservice";
 import { FaPhone, FaFire, FaMedal } from "react-icons/fa";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Helmet } from "react-helmet";
+
 
 import Carousel from "react-multi-carousel";
 import axios from "axios";
@@ -77,6 +79,18 @@ const Home = () => {
     ];
 
     return (
+
+      <>
+
+      <Helmet>
+        <title>Home - Sahaya Disaster Management</title>
+        <meta name="description" content="Sahaya, your reliable partner in disaster management. Discover tools and strategies for effective disaster management solutions." />
+        <meta name="keywords" content="disaster management, emergency shelters, hospitals, safety tips, volunteer, Sahaya" />
+        <meta name="author" content="Sahaya Team" />
+        <meta property="og:title" content="Sahaya Disaster Management" />
+        <meta property="og:description" content="Explore tools and strategies to safeguard and empower during crises." />
+      </Helmet>
+
       <div className="mt-12">
         <h1 className="text-gray-700 font-bold text-2xl lg:text-4xl mb-2">
           Heroes of the Day
@@ -99,6 +113,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      </>
     );
   };
 

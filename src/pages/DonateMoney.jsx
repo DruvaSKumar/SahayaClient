@@ -23,7 +23,7 @@ export const useDebounce = (inputValue, delay = 1000) => {
   return debouncedValue;
 };
 const stripePromise = loadStripe(
-  "pk_test_51N11ZFSAH67u0bA3HrmzqyuwVK06zUT7Hp0l59ESd1tJZuUDWJyqllzArAaMUnzNMKfadJX1exz7sWrBrZ3cCnpv002ChIWkyJ"
+  "pk_test_51PmCI6DuQLqLy7pGZedlaqFRbSt66xRDI338PZVvb2AIvpkeXqPGkqSqSb3pWYxeypJm5dOPOhIlEXhfP9Dl2ykN00Uxoylfd0"
 );
 
 const DonateForm = ({ clientSecret }) => {

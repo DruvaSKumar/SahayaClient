@@ -110,6 +110,8 @@ const UpdateProfile = () => {
         delete dataToSend.password;
       }
 
+      console.log('Request Body:', JSON.stringify(dataToSend));
+
       const res = await fetch(
         `${BASE_URL}/api/user/update/${currentUser.user._id}`,
         {

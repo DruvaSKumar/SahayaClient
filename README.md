@@ -5,7 +5,8 @@ Sahaya is a powerful disaster management platform developed using the MERN stack
 Explore tools that safeguard, strategies that empower, and the support you need in times of crisis.
 
 
-![Logo](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/bda8cf16-d7f5-456b-a800-6e7dd85954d4)
+![Nexus](https://github.com/user-attachments/assets/8e3ccb1a-6a70-4560-99ca-2d30e4a16786)
+
 
 
 ## Features
@@ -24,10 +25,10 @@ Explore tools that safeguard, strategies that empower, and the support you need 
 
 **Client:** React, Redux, TailwindCSS,FlowBite React,
 **Server:** NodeJS, MongoDB, ExpressJS,WebSocket,Stripe,
-![flood](https://github.com/user-attachments/assets/0b7b7223-305c-4d85-a62f-14d0e03f0ea4)
+
 
 ## Home Page
-![Home Page](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/1158ac27-4fd5-46c7-a584-1c65ba5e8818)
+
  ## Shelter Page
 ![Shelter and hospital](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/c844a06c-3190-42dc-bf19-5c6d0db953fc)
  ## Volunteer Dashboard

@@ -26,26 +26,20 @@ Explore tools that safeguard, strategies that empower, and the support you need 
 **Client:** React, Redux, TailwindCSS,FlowBite React,
 **Server:** NodeJS, MongoDB, ExpressJS,WebSocket,Stripe,
 
+## Sign up page
+![Screenshot 2024-08-10 213151](https://github.com/user-attachments/assets/89b39f2a-23e9-453b-ae23-61de54ea5d76)
 
 ## Home Page
+![Screenshot 2024-08-10 212808](https://github.com/user-attachments/assets/5f0286ef-9dfc-4514-ad59-5289d9f80f7a)
 
- ## Shelter Page
-![Shelter and hospital](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/c844a06c-3190-42dc-bf19-5c6d0db953fc)
- ## Volunteer Dashboard
-![Screenshot 2024-06-02 211252](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/e69a6000-de77-4f5a-a33d-c694b8d94307)
- ## All Volunteers
-![Screenshot 2024-06-02 211305](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/d57d236b-a1e6-4f8a-af5f-5ae952aef820)
- ## Alerts
-![Screenshot 2024-06-02 211320](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/d09bc381-a5ce-4bbe-b54f-7119deb10495)
+ ## Education Page
+![Screenshot 2024-08-10 213051](https://github.com/user-attachments/assets/6d62d454-c71d-4b9a-b64c-52baabcc1427)
 
-## Emergency plan
-![Screenshot 2024-06-02 211330](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/633b2a4b-1725-4d70-bc2c-284a3a46ab71)
+## About us 
+![Screenshot 2024-08-10 213013](https://github.com/user-attachments/assets/308dd8ac-248d-47cb-8c47-124983cf3dc4)
 
-## Community page
-![Screenshot 2024-06-02 211341](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/7aa36628-f9d9-4ef3-aef4-f54d57a08f1f)
-
-## Donate Money
-![Screenshot 2024-06-02 211352](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/ecb3c562-5280-40aa-ad88-64b7a0f25699)
+## Resources
+![Screenshot 2024-08-10 213119](https://github.com/user-attachments/assets/d8c96d87-322c-47cc-9046-af5d5dd42850)
 
 
 

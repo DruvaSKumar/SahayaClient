@@ -324,12 +324,18 @@ const Home = () => {
   return (
     <>
       <div className="flex flex-col gap-6 p-20 px-4 max-w-6xl mx-auto">
+        <motion.div
+        className="text-gray-600 text-xs sm:text-sm mt-4"
+        variants={fadeIn}
+      >
         <h1 className="text-green-700 font-bold text-3xl lg:text-6xl">
           Discover Sahaya for your next{" "}
           <span className="text-green-500">critical</span>
           <br />
           disaster management solution
         </h1>
+
+        </motion.div>
         <div className="text-gray-600 text-xs sm:text-sm">
           Sahaya, your reliable partner in disaster management, where every
           solution is tailored to protect and serve.
@@ -359,7 +365,7 @@ const Home = () => {
         </div>
         <div className="flex justify-center mt-2 relative w-full">
           <div className="relative w-full max-w-md">
-            <input
+            {/* <input
               className="w-full pl-3 pr-10 py-2 border rounded-md"
               type="text"
               placeholder={`Search for ${
@@ -371,7 +377,7 @@ const Home = () => {
             <HiSearch
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-2xl cursor-pointer"
               onClick={handleSearch}
-            />
+            /> */}
           </div>
         </div>
 

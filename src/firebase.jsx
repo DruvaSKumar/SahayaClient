@@ -2,13 +2,13 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
-  apiKey: "AIzaSyBHqILdemr8fVLrThOTdnvG2cF8IpM-hJo",
-  authDomain: "Sahaya-8487a.firebaseapp.com",
-  projectId: "Sahaya-8487a",
-  storageBucket: "Sahaya-8487a.appspot.com",
-  messagingSenderId: "393295080767",
-  appId: "1:393295080767:web:d4173802628ecb810fb78a",
-  measurementId: "G-E7F1N4MBCK",
+  apiKey: "AIzaSyBLeh_20WkLHf_Pu81-vqRJnPMoD14RnUw",
+  authDomain: "sahaya-76f05.firebaseapp.com",
+  projectId: "sahaya-76f05",
+  storageBucket: "sahaya-76f05.appspot.com",
+  messagingSenderId: "343238432969",
+  appId: "1:343238432969:web:a89a9129a3393e1e1f5518",
+  measurementId: "G-W67RPXHPW1",
 };
 
 // Initialize Firebase

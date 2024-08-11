@@ -1,7 +1,8 @@
 
-## NEXUS
+## SAHAYA
 
-Nexus is a robust disaster management platform engineered with the MERN stack. Its mission is to empower communities to proactively prepare for, swiftly respond to, and effectively recover from disasters. The frontend is built with React.js to deliver a seamless user experience.
+Sahaya is a powerful disaster management platform developed using the MERN stack. Its goal is to enable communities to proactively prepare for, rapidly respond to, and effectively recover from disasters. The platform’s frontend is crafted with React.js to ensure a smooth and intuitive user experience.
+Explore tools that safeguard, strategies that empower, and the support you need in times of crisis.
 
 
 ![Logo](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/bda8cf16-d7f5-456b-a800-6e7dd85954d4)
@@ -9,46 +10,21 @@ Nexus is a robust disaster management platform engineered with the MERN stack. I
 
 ## Features
 
-- Real-time Alert System: Provides timely alerts and updates about disasters.
-- Resource Management Dashboard: Centralized dashboard for managing emergency resources.
-- Community Forums and Discussion Boards: Facilitates communication among community members and authorities.
-- Emergency Planning Tools: Empowers users to develop personalized emergency plans.
-- Interactive Maps: Visualizes real-time disaster information, evacuation routes, and distribution centers.
-
+- Instant Alert Notifications: Delivers immediate alerts and updates on ongoing disasters.
+- Resource Coordination Dashboard: A centralized hub for overseeing and managing emergency resources.
+- Community Interaction Forums: Enables communication between community members and authorities.
+- Personalized Emergency Planning Tools: Allows users to create customized emergency plans.
+- Real-time Interactive Maps: Displays real-time disaster data, evacuation routes, and resource distribution centers.
+- Volunteer Coordination System: Organizes and coordinates volunteer activities.
+- Disaster Relief Donation System: Supports contributions for disaster relief efforts.
 - Volunteer Management System: Coordinates volunteer efforts.
-
 - Donation Functionality: Facilitates donations for disaster relief efforts.
+  
 ## Tech Stack
 
 **Client:** React, Redux, TailwindCSS,FlowBite React,
 **Server:** NodeJS, MongoDB, ExpressJS,WebSocket,Stripe,
-
-## Installation
-
-1. Clone the repository: `git clone <https://github.com/shanmugapriya1203/nexus-client.git>`
-2. Navigate to the project directory: `cd <master>`
-3. Install dependencies: `npm install` or `yarn install`
-
-## Usage
-
-Explain how to use your project here. Provide examples if possible.
-
-## Contributing
-
-If you'd like to contribute, please follow these guidelines:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature`)
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add new feature'`)
-5. Push to the branch (`git push origin feature`)
-6. Create a pull request.
-
-## Contact
-
-- Author Name: [Sam]
-- GitHub: [(https://github.com/shanmugapriya1203)]
-- Email: [priyamuthukumar1203@gmail.com]
+![flood](https://github.com/user-attachments/assets/0b7b7223-305c-4d85-a62f-14d0e03f0ea4)
 
 ## Home Page
 ![Home Page](https://github.com/shanmugapriya1203/nexus-client/assets/110707278/1158ac27-4fd5-46c7-a584-1c65ba5e8818)

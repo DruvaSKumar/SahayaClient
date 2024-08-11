@@ -16,7 +16,6 @@ import Home from "./pages/Home";
 import Education from "./pages/Education";
 import Resources from "./pages/Resources";
 import EmergencyAlert from "./components/EmergencyAlert";
-import Geolocation from "./pages/Geolocation";
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const HomeShelter = lazy(() => import("./pages/HomeShelter"));
@@ -70,7 +69,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/education" element={<Education />} />
-            <Route path="/Geolocation" element={<Geolocation />} />
             <Route path="/Resources" element={<Resources />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />

@@ -38,8 +38,18 @@ Explore tools that safeguard, strategies that empower, and the support you need 
 ## About us 
 ![Screenshot 2024-08-10 213013](https://github.com/user-attachments/assets/308dd8ac-248d-47cb-8c47-124983cf3dc4)
 
+## Admin Dashboard
+![WhatsApp Image 2024-08-11 at 10 25 13 AM](https://github.com/user-attachments/assets/4b56fdaa-f143-4461-85a5-c27c34769d6f)
+
 ## Resources
-![Screenshot 2024-08-10 213119](https://github.com/user-attachments/assets/d8c96d87-322c-47cc-9046-af5d5dd42850)
+![WhatsApp Image 2024-08-11 at 10 25 47 AM](https://github.com/user-attachments/assets/6771ece2-b933-41ae-afa1-d1be3826b9b7)
+
+## Alerts
+![WhatsApp Image 2024-08-11 at 10 29 21 AM](https://github.com/user-attachments/assets/683b287a-f0b7-4b27-9dac-1c4bc53161c4)
+
+
+
+
 
 
 

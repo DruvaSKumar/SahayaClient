@@ -133,7 +133,7 @@ const DonateMoney = () => {
             {clientSecret ? (
               <DonateForm clientSecret={clientSecret} />
             ) : (
-              <p>Loading...</p>
+              <p>Add Rs 50 or more and wait for couple of seconds...</p>
             )}
             <Button
               color="primary"
